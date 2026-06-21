@@ -1,0 +1,55 @@
+import { db } from "../config/database.js";
+
+export class UserRepository {
+
+  async findByEmail(
+    email: string
+  ) {
+
+    const result = await db.query(
+      `
+      SELECT *
+      FROM users
+      WHERE email = $1
+      `,
+      [email]
+    );
+
+    return result.rows[0];
+
+  }
+
+  async create(
+    email: string,
+    passwordHash: string,
+    role: string
+  ) {
+
+    const result = await db.query(
+      `
+      INSERT INTO users
+      (
+        email,
+        password_hash,
+        role
+      )
+      VALUES
+      (
+        $1,
+        $2,
+        $3
+      )
+      RETURNING *
+      `,
+      [
+        email,
+        passwordHash,
+        role
+      ]
+    );
+
+    return result.rows[0];
+
+  }
+
+}
