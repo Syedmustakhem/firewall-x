@@ -162,8 +162,8 @@ export const LandingPage = () => {
             <div className="p-1.5 bg-blue-600 rounded-lg shadow-lg shadow-blue-500/30 group-hover:shadow-blue-500/50 transition-shadow">
               <Shield className="w-5 h-5 text-white" />
             </div>
-            <span className="font-bold text-lg tracking-tight">SecureShield</span>
-            <span className="text-xs text-gray-400 ml-1">by FirewallX</span>
+            <span className="font-bold text-lg tracking-tight">Firewall-x</span>
+            <span className="text-xs text-gray-400 ml-1">by Secure Shield</span>
           </div>
 
           <div className="hidden md:flex items-center gap-8">
