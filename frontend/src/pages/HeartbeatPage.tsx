@@ -25,8 +25,8 @@ export const HeartbeatPage = () => {
   const [loading, setLoading] = useState(true);
   const [lastUpdated, setLastUpdated] = useState<Date>(new Date());
   const [countdown, setCountdown] = useState(10);
-  const intervalRef = useRef<ReturnType<typeof setInterval>>();
-  const countdownRef = useRef<ReturnType<typeof setInterval>>();
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+const countdownRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const fetchHeartbeats = async () => {
     try {
@@ -42,7 +42,7 @@ export const HeartbeatPage = () => {
             deviceId: device.id,
             deviceName: device.name,
             status: newStatus,
-            lastSeen: device.lastSeen,
+            lastSeen: device.last_seen || "",
             latency: newStatus === "online" ? Math.floor(Math.random() * 40) + 5 : undefined,
             history,
           };

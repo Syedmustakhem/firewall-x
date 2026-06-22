@@ -2,7 +2,15 @@ export interface User {
   id: string;
   email: string;
   name: string;
-  role: "admin" | "operator" | "viewer";
+
+  role:
+    | "superadmin"
+    | "admin"
+    | "operator"
+    | "viewer";
+
+  organization_id?: string;
+
   createdAt: string;
 }
 

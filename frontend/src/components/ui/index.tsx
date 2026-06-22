@@ -78,18 +78,22 @@ export const Badge: React.FC<BadgeProps> = ({
 };
 
 // ─── CARD ────────────────────────────────────────────────────────────────────
+// ─── CARD ────────────────────────────────────────────────────────────────────
 interface CardProps {
   children: React.ReactNode;
   className?: string;
   padding?: boolean;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
 export const Card: React.FC<CardProps> = ({
   children,
   className = "",
   padding = true,
+  onClick,
 }) => (
   <div
+    onClick={onClick}
     className={`bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm ${
       padding ? "p-6" : ""
     } ${className}`}
