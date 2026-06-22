@@ -158,13 +158,25 @@ export const LandingPage = () => {
       {/* NAVBAR */}
       <nav className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${scrollY > 10 ? "bg-white/95 dark:bg-gray-950/95 backdrop-blur-xl shadow-lg shadow-blue-500/5 border-b border-gray-100 dark:border-gray-800" : "bg-white dark:bg-gray-950 border-b border-gray-100 dark:border-gray-900"}`}>
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2 group cursor-pointer" onClick={() => navigate("/")}>
-            <div className="p-1.5 bg-blue-600 rounded-lg shadow-lg shadow-blue-500/30 group-hover:shadow-blue-500/50 transition-shadow">
-              <Shield className="w-5 h-5 text-white" />
-            </div>
-            <span className="font-bold text-lg tracking-tight">Firewall-x</span>
-            <span className="text-xs text-gray-400 ml-1">by Secure Shield</span>
-          </div>
+         <div
+  className="flex items-center gap-3 cursor-pointer"
+  onClick={() => navigate("/")}
+>
+  <img
+    src="/Professional_minimalist_logo_design_for_202606230119.jpeg"
+    alt="FirewallX"
+    className="h-12 w-auto"
+  />
+
+  <div className="flex flex-col">
+    <span className="font-bold text-lg">
+      FirewallX
+    </span>
+    <span className="text-xs text-gray-500">
+      by Secure Shield
+    </span>
+  </div>
+</div>
 
           <div className="hidden md:flex items-center gap-8">
             {NAV_LINKS.map((link) => (
