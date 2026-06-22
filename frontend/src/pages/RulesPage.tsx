@@ -142,8 +142,13 @@ export const RulesPage = () => {
                     <td className="table-cell font-medium text-gray-900 dark:text-white">{rule.name}</td>
                     <td className="table-cell">{actionBadge(rule.action)}</td>
                     <td className="table-cell text-gray-600 dark:text-gray-400 uppercase font-mono text-xs">{rule.protocol}</td>
-                    <td className="table-cell text-gray-600 dark:text-gray-400 font-mono text-xs">{rule.source || rule.sourceIp || "any"}</td>
-                    <td className="table-cell text-gray-600 dark:text-gray-400 font-mono text-xs">{rule.destination || rule.destinationIp || "any"}</td>
+                    <td className="table-cell text-gray-600 dark:text-gray-400 font-mono text-xs">
+  {rule.sourceIp || rule.source_ip || "any"}
+</td>
+
+<td className="table-cell text-gray-600 dark:text-gray-400 font-mono text-xs">
+  {rule.destinationIp || rule.destination_ip || "any"}
+</td>
                     <td className="table-cell">
                       <span className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-0.5 rounded font-mono text-xs">
                         {rule.port || "any"}
